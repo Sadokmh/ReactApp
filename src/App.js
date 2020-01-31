@@ -2,20 +2,31 @@ import React from 'react';
 import logo from './logo.svg';
 import PageWrapper from './components/PageWrapper';
 import './App.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+//pages
 import Home from './components/pages/Home';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import About from './components/pages/About';
 
 function App() {
   return (
     <div className="App">
-      <PageWrapper >
-        <Router>
+      <Router>
+        <PageWrapper >
+
           <Route
-            path="/home"
-            component = {Home}
+            exact={true}
+            path="/"
+            component={Home}
           />
-        </Router>
+
+          <Route
+            path="/about"
+            component={About}
+          />
+
         </PageWrapper>
+      </Router>
     </div>
   );
 }
