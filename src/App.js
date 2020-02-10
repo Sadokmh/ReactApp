@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import PageWrapper from './components/PageWrapper';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 //pages
 import Home from './components/pages/Home';
 import About from './components/pages/About';
+import Services from './components/common/Services';
+import Contact from './components/pages/Contact';
 
 function App() {
   return (
@@ -23,6 +24,16 @@ function App() {
           <Route
             path="/about"
             component={About}
+          />
+
+          <Route
+            path="/services"
+            component={Services}
+          />
+
+          <Route
+            path="/contact"
+            component={Contact}
           />
 
         </PageWrapper>
